@@ -1,140 +1,107 @@
-In this project, let's build a **Gradient Generator** app by applying the concepts we have learned till now.
+# CSS Gradient Generator 🎨
 
-### Refer to the image below:
+A simple React-based web application that allows users to generate beautiful CSS linear gradients by selecting gradient direction and colors interactively.
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/gradient-generator-output-v0.gif" alt="gradient-generator" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+## 🚀 Features
 
-### Design Files
+* Select gradient direction (Top, Bottom, Left, Right)
+* Choose two custom colors
+* Generate gradient background dynamically
+* Default gradient colors on load
+* Responsive and user-friendly interface
+* Updates background instantly after clicking **Generate**
 
-<details>
-<summary>Click to view</summary>
+## 🛠️ Tech Stack
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/gradient-generator-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/gradient-generator-lg-output-v0.png)
+* React.js
+* JavaScript (ES6)
+* HTML5
+* CSS3
 
-</details>
+## 📂 Project Structure
 
-### Set Up Instructions
+```
+css-gradient-generator/
+│
+├── src/
+│   ├── components/
+│   │   └── GradientGenerator/
+│   │       ├── index.js
+│   │       └── index.css
+│   │
+│   ├── App.js
+│   └── index.js
+│
+├── public/
+│
+└── package.json
+```
 
-<details>
-<summary>Click to view</summary>
+## ⚙️ Installation & Setup
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+Follow these steps to run the project locally:
 
-### Completion Instructions
+1. Clone the repository
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+```
+git clone https://github.com/your-username/css-gradient-generator.git
+```
 
-The app must have the following functionalities
+2. Navigate into the project folder
 
-- Initially, the selected gradient direction should be the first value in the given `gradientDirectionsList`
-- The initial values for the HTML input elements with type color should be **#8ae323** and **#014f7b** respectively
-- When the values are provided for both the input elements with type color, then provided values should be the text content for the respective paragraph elements
-- When the **Generate** button is clicked after selecting the direction and picking the colors, the background of the app should have a linear gradient with the selected direction and colors provided
+```
+cd css-gradient-generator
+```
 
-- The `GradientGenerator` component will consist `gradientDirectionsList`. It consists of a list of gradient directions objects with the following properties in each gradient directions object
+3. Install dependencies
 
-  |    Key      | Data Type |
-  | :--------:  | :-------: |
-  | directionId |  String   |
-  |    value    |  String   |
-  | displayText |  string   |
+```
+npm install
+```
 
-</details>
+4. Start the development server
 
-<details>
-<summary>Components Structure</summary>
+```
+npm start
+```
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/gradient-generator-component-breakdown-structure.png" alt="gradetient-generator-component-breakdown-structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+The app will run at:
 
-</details>
+```
+http://localhost:3000
+```
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
+## 🎯 How It Works
 
-Use these files to complete the implementation:
+1. Select a gradient direction
+2. Pick two colors using color inputs
+3. Click **Generate**
+4. Background updates with selected gradient instantly
 
-- `src/components/GradientGenerator/index.js`
-- `src/components/GradientGenerator/styledComponents.js`
-- `src/components/GradientDirectionItem/index.js`
-- `src/components/GradientDirectionItem/styledComponents.js`
-</details>
+Example gradient format used:
 
-### Quick Tips
+```
+background-image: linear-gradient(direction, color1, color2);
+```
 
-<details close>
-<summary>Click to view</summary>
-<br>
+## 📸 Preview
 
-- The HTML input element with the type **color** is designed for the user to select the **color** from a color picker.
+This app generates dynamic CSS gradients like:
 
-  ```jsx
-  <input type="color" />
-  ```
+```
+linear-gradient(to bottom, #8ae323, #014f7b)
+```
 
-- You can use the CSS **opacity** property to set the degree of transparency of an element. It has a value in the range of 0 to 1 inclusive.
+## 📌 Future Improvements
 
-  ```
-   opacity: 0.5;
-  ```
+* Add diagonal gradient directions
+* Copy CSS gradient button
+* Save favorite gradients
+* Dark mode support
 
-</details>
+## 👨‍💻 Author
 
-### Important Note
+**G B Uday Kiran**
 
-<details>
-<summary>Click to view</summary>
+GitHub: https://github.com/your-username
 
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- The HTML container element for the linear gradient values are applied should have `data-testid` as **gradientGenerator**
-- When a gradient direction button is active then the button should have the CSS property opacity with the value **1**
-- When a gradient direction button is inactive then the button should have the CSS property opacity with the value **0.5**
-
-</details>
-
-### Resources
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #8ae323; width: 150px; padding: 10px; color: black">Hex: #8ae323</div>
-<div style="background-color: #014f7b; width: 150px; padding: 10px; color: white">Hex: #014f7b</div>
-<div style="background-color: #ededed; width: 150px; padding: 10px; color: black">Hex: #ededed</div>
-<div style="background-color: #334155; width: 150px; padding: 10px; color: white">Hex: #334155</div>
-<div style="background-color: #ffffff79; width: 150px; padding: 10px; color: black">Hex: #ffffff79</div>
-<div style="background-color: #1e293b; width: 150px; padding: 10px; color: white">Hex: #1e293b</div>
-<div style="background-color: #00c9b7; width: 150px; padding: 10px; color: black">Hex: #00c9b7</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
